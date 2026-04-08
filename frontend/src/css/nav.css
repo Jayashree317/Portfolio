@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0%;
+}
+
+body {
+  background-color: black !important;
+}
+
+.navbar {
+  width: 100%;
+  background-color: transparent !important;
+  display: flex;
+  /* background: rgba(0, 0, 0, 0.5) !important; */
+  background: #0a0a0aa1 !important; 
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1rem !important;
+  font-family: "Georgia", serif;
+}
+
+.logo {
+  font-size: 2rem !important;
+  font-family: "Rubik Dirt", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #dedbd4;
+  text-shadow: 0 0 10px #ffd700, 0 0 20px #ffa500, 0 0 30px #ffea47;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: 600;
+  color: #f8f6f6 !important;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: #fefefe !important;
+  text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700;
+}
+/* .nav-link.active{
+  text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700 !important;
+} */
+.btn-main {
+  padding: 5px 10px;
+  border: 1px solid #ffda89 !important;
+  border-radius: 1.5rem !important;
+  width: 120px;
+  height: 40px;
+  color: #fdfcfb !important;
+  background-color: transparent !important;
+  cursor: pointer;
+  font-family: "Georgia", serif;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-main:hover {
+  border: 1px solid #ffda89;
+  color: black !important;
+  background: #f5db5b;
+  background: linear-gradient(
+    rgba(245, 242, 71, 1) 55%,
+    rgba(247, 235, 124, 1) 100%
+  );
+  box-shadow: 0 0 15px #ffd700;
+}
+
+.navbar-toggler-icon {
+  background-image: url("../images/hamburger.png") !important;
+}
+
+.navbar-toggler-icon:hover {
+  filter: drop-shadow(0 0 0.75rem rgb(220, 150, 20)) !important;
+}
+/* #gap{
+  margin-top: 200px;
+  background: red;
+} */

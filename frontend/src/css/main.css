@@ -1,0 +1,35 @@
+/* Fullscreen video overlay */
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    overflow: hidden;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1s ease;
+    opacity: 1;
+  }
+  
+  /* When video ends, fade out */
+  .video-overlay.hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* Video should cover entire screen */
+  .responsive-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+  
+  /* Prevent scroll while video plays */
+  body.video-playing {
+    overflow: hidden;
+  }
+  

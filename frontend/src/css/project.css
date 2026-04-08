@@ -1,0 +1,157 @@
+.project-slider {
+  max-width: 900px;
+  height: 100vh;
+  margin: auto;
+  padding: 2rem;
+  margin-top: 50px;
+  /* background: #000; */
+  color: #fff;
+}
+
+#project {
+  margin-top: 50px;
+}
+.project-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #828282;
+  background: linear-gradient(
+    90deg,
+    rgba(130, 130, 130, 1) 0%,
+    rgba(80, 84, 82, 0.39) 0%,
+    rgba(78, 82, 80, 0.65) 16%,
+    rgba(59, 58, 55, 0.84) 80%
+  );
+  box-shadow: 5px 5px 15px 5px #000000;
+  border-radius: 20px;
+  /* padding: 2rem; */
+  color: #fcfafa;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  /* gap: 2rem; */
+}
+
+.project-image {
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.btn-main1 {
+  padding: 5px 10px;
+  border: 1px solid #ffda89 !important;
+  border-radius: 1.5rem !important;
+  width: 120px;
+  height: 40px;
+  color: #fdfcfb !important;
+  background: #f5db5b;
+  cursor: pointer;
+  font-family: "Georgia", serif;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-main1:hover {
+  border: 1px solid #ffda89;
+  color: black !important;
+  background: #f5db5b;
+  background: linear-gradient(
+    rgba(245, 242, 71, 1) 55%,
+    rgba(247, 235, 124, 1) 100%
+  );
+  box-shadow: 0 0 15px #ffd700;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-details {
+  width: 100%;
+  /* margin-bottom: 15px; */
+  padding: 20px;
+}
+
+.project-buttons {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  margin-top: -30px;
+  /* justify-content: center; */
+}
+
+
+@media (max-width: 576px) {
+  .project-slider {
+    padding: 1rem;
+    height: auto;
+  }
+
+  .project-card {
+    border-radius: 15px;
+  }
+
+  .project-image {
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .project-details {
+    padding: 15px;
+  }
+
+  .project-details h3 {
+    font-size: 18px;
+  }
+
+  .project-details p {
+    font-size: 14px;
+  }
+
+  .project-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 0;
+    padding: 15px;
+  }
+
+  /* .btn-main1 {
+    width: 100%;
+    /* max-width: 200px; 
+  } */
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .project-slider {
+    padding: 1.5rem;
+    height: auto;
+  }
+
+  .project-image {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .project-details h3 {
+    font-size: 20px;
+  }
+
+  .project-details p {
+    font-size: 15px;
+  }
+
+  .project-buttons {
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  /* .btn-main1 {
+    width: 140px;
+  } */
+}

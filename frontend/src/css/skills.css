@@ -1,0 +1,217 @@
+.containerStyle {
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 4px #000;
+  }
+  
+  .sectionTitleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+
+  .lineLeft,
+  .lineRight {
+    flex: 1;
+    height: 4px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 3px 3px 6px #ffd700;
+  }
+  
+  .lineLeft {
+    margin-right: 1rem;
+  }
+  
+  .lineRight {
+    margin-left: 1rem;
+  }
+  
+  .headStyle {
+    font-family: "Titan One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+    font-size: 35px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 2px #ffd700;
+    width: fit-content;
+    color: white;
+    margin: 0;
+  }
+  
+
+  /* ===== SECTION ===== */
+#skillsSection {
+  padding: 80px;
+  color: white;
+}
+
+/* ===== TITLE ===== */
+.skillsTitle {
+  text-align: center;
+  font-family: "Titan One", sans-serif;
+  font-size: 40px;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 4px #ffd700;
+}
+
+/* ===== 3 CARD GRID ===== */
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+}
+
+/* ===== CARD ===== */
+.skillsCard {
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 0 15px #ffd700;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.skillsCard h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 4px #ffd700;
+}
+
+/* ===== SKILL ITEM ===== */
+.skillItem {
+  margin-bottom: 18px;
+}
+
+/* ===== NAME + IMAGE ===== */
+.skillHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.skillInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skillInfo img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* ===== RECTANGLE LOADER ===== */
+.skillBar {
+  width: 100%;
+  height: 10px;
+  background: #2d2d2d;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skillProgress {
+  height: 100%;
+  background: #ffd700;
+  transition: width 0.4s ease;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .skillsGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  #skillsSection {
+  padding: 60px 20px;
+  }
+  .headStyle,.lineLeft,.lineRight{
+  margin-top: 130px !important;
+}
+}
+
+
+.skillsCard:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 25px #ffd700;
+  transition: all 0.3s ease;
+}
+
+/* heading */
+.headStyle {
+  font-family: "Titan One", sans-serif;
+  font-size: 35px;
+  letter-spacing: 2px;
+  color: white;
+  text-shadow: 2px 2px 2px #ffd700;
+
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 30px #ff4000;
+  }
+
+  50% {
+    text-shadow: 0 0 20px #ff9a00;
+  }
+
+  100% {
+    text-shadow: 0 0 30px #ffd700;
+  }
+}
+
+
+.skillInfo img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.skillItem:hover img {
+  transform: scale(1.2) rotate(5deg);
+  filter: drop-shadow(0 0 6px #ffd700);
+}
+
+/* progress bar */
+.skillProgress {
+  height: 100%;
+  background: #ffd700;
+  border-radius: 10px;
+  transition: width 4s ease-in-out;
+}
+
+/* ===== CARD ENTRY ANIMATION ===== */
+.skillsCard {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.showCards .skillsCard {
+  animation: cardFade 0.8s ease forwards;
+}
+
+.showCards .skillsCard:nth-child(1) { animation-delay: 0.2s; }
+.showCards .skillsCard:nth-child(2) { animation-delay: 0.4s; }
+.showCards .skillsCard:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes cardFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* progress animation smooth */
+.skillProgress {
+  transition: width 1.5s ease-in-out;
+}
