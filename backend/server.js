@@ -11,6 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.post("/api/contact", async (req, res) => {
+    console.log("Contact API called");
   const { name, email, message } = req.body;
 
   if (!name || !email || !message) {
