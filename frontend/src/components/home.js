@@ -35,7 +35,7 @@ function Home() {
 
               <div className="main-cv justify-content-center">
                 <Button
-                  href="/Jayashreeresume.pdf"
+                  href="/Jayashreeresume1.pdf"
                   download
                   className="home-btn"
                 >
@@ -43,7 +43,7 @@ function Home() {
                 </Button>
 
                 <a
-                  href="/Jayashreeresume.pdf"
+                  href="/Jayashreeresume1.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn home-btn"
