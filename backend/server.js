@@ -67,6 +67,26 @@ app.get("/", (req, res) => {
   res.send("Portfolio Backend Running Successfully");
 });
 
+
+app.get("/test-email", async (req, res) => {
+  try {
+    const transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
+
+    await transporter.verify();
+    res.send("SMTP Connected Successfully");
+  } catch (err) {
+    res.send(err.message);
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
