@@ -53,13 +53,14 @@ app.post("/api/contact", async (req, res) => {
       message: "Message sent successfully",
     });
   } catch (err) {
-    console.error("Email error:", err);
+  console.error("Email error:", err);
+  console.error("Email error message:", err.message);
 
-    res.status(500).json({
-      error: "Failed to send message",
-      details: err.message,
-    });
-  }
+  res.status(500).json({
+    error: "Failed to send message",
+    details: err.message,
+  });
+}
 });
 
 app.get("/", (req, res) => {
