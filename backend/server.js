@@ -10,6 +10,20 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
+// Check Environment Variables
+app.get("/env-check", (req, res) => {
+  res.json({
+    emailUserExists: !!process.env.EMAIL_USER,
+    emailPassExists: !!process.env.EMAIL_PASS,
+  });
+});
+
+// Home Route
+app.get("/", (req, res) => {
+  res.send("Portfolio Backend Running Successfully");
+});
+
+// Contact Route
 app.post("/api/contact", async (req, res) => {
   const { name, email, message } = req.body;
 
@@ -22,15 +36,17 @@ app.post("/api/contact", async (req, res) => {
   try {
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
-      port: 465,
-      secure: true,
+      port: 587,
+      secure: false,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
+      tls: {
+        rejectUnauthorized: false,
+      },
     });
 
-    // Verify SMTP connection
     await transporter.verify();
     console.log("SMTP connection successful");
 
@@ -43,47 +59,25 @@ app.post("/api/contact", async (req, res) => {
         <h3>New Contact Message</h3>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong><br/>${message}</p>
+        <p><strong>Message:</strong><br>${message}</p>
       `,
     };
 
-    await transporter.sendMail(mailOptions);
+    const info = await transporter.sendMail(mailOptions);
+
+    console.log("Email sent:", info.response);
 
     res.status(200).json({
       message: "Message sent successfully",
     });
   } catch (err) {
-  console.error("Email error:", err);
-  console.error("Email error message:", err.message);
+    console.error("Email error:", err);
+    console.error("Email error message:", err.message);
 
-  res.status(500).json({
-    error: "Failed to send message",
-    details: err.message,
-  });
-}
-});
-
-app.get("/", (req, res) => {
-  res.send("Portfolio Backend Running Successfully");
-});
-
-
-app.get("/test-email", async (req, res) => {
-  try {
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
+    res.status(500).json({
+      error: "Failed to send message",
+      details: err.message,
     });
-
-    await transporter.verify();
-    res.send("SMTP Connected Successfully");
-  } catch (err) {
-    res.send(err.message);
   }
 });
 
