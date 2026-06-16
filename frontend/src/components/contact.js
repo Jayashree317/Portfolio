@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from "react";
 import {
   FaMapMarkerAlt,
@@ -47,7 +48,7 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://portfolio-7s33.onrender.com/api/contact", {
+      const response = await fetch("https://portfolio-3-drdx.onrender.com/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
