@@ -1,5 +1,3 @@
-
-
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -13,7 +11,6 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.post("/api/contact", async (req, res) => {
-    console.log("Contact API called");
   const { name, email, message } = req.body;
 
   if (!name || !email || !message) {
@@ -51,4 +48,4 @@ app.post("/api/contact", async (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-}); 
+});
