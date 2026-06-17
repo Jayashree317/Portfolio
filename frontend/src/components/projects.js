@@ -3,6 +3,8 @@ import Slider from "react-slick";
 import "../css/project.css";
 import happypaws from "../images/happypaws.png";
 import voicetodolist from "../images/voice-todo.png";
+import Employee from "../images/employee.png";
+import chat from "../images/chat.png";
 
 const projects = [
   {
@@ -25,7 +27,7 @@ const projects = [
     title: "Employee Management System",
     description:
      "A full-stack Employee Management System developed using Java Spring Boot, MySQL, HTML, CSS and Thymeleaf.This application helps manage employees and departments with CRUD operations and responsive UI.",
-    image: "/images/employee.png",
+    image:Employee ,
     // link: "https://your-ecommerce-demo.netlify.app",
     github: "https://github.com/Jayashree317/Employee_Management_System",
   },
@@ -35,24 +37,24 @@ const projects = [
       "A task management system with drag-and-drop features, CRUD operations, and user role management.",
     image: "/images/dashboard.png",
     link: "https://your-dashboard-demo.netlify.app",
-    github: "https://github.com/Jayashree317/HappyPaws",
+    github: "https://github.com/Jayashree317/PowerSoft-_Techno_Solution",
   },
   {
-    title: "Weather App",
+    title: "Real-Time Chat Application",
     description:
       "A responsive weather app using API integration to show real-time weather data by location.",
-    image: "/images/weather.png",
-    link: "https://your-weather-app.netlify.app",
-    github: "https://github.com/Jayashree317/HappyPaws",
+    image: chat,
+    link: "https://chat-application-1-eaig.onrender.com",
+    github: "https://github.com/Jayashree317/Chat_Application",
   },
-  {
-    title: "Portfolio Website",
-    description:
-      "A personal portfolio website showcasing skills, projects, and contact information.",
-    image: "/images/portfolio.png",
-    link: "https://your-portfolio.netlify.app",
-    github: "https://github.com/Jayashree317/HappyPaws",
-  },
+  // {
+  //   title: "Portfolio Website",
+  //   description:
+  //     "A personal portfolio website showcasing skills, projects, and contact information.",
+  //   image: "/images/portfolio.png",
+  //   link: "https://your-portfolio.netlify.app",
+  //   github: "https://github.com/Jayashree317/HappyPaws",
+  // },
 ];
 
 const Projects = () => {
