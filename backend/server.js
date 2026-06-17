@@ -11,6 +11,10 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.post("/api/contact", async (req, res) => {
+  console.log("Contact API called");
+  console.log("EMAIL_USER:", process.env.EMAIL_USER);
+  console.log("EMAIL_PASS exists:", !!process.env.EMAIL_PASS);
+
   const { name, email, message } = req.body;
 
   if (!name || !email || !message) {
@@ -19,12 +23,17 @@ app.post("/api/contact", async (req, res) => {
 
   try {
     const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false,
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+  connectionTimeout: 30000,
+  greetingTimeout: 30000,
+  socketTimeout: 30000,
+});
 
     const mailOptions = {
       from: `"${name}" <${email}>`,
@@ -39,10 +48,18 @@ app.post("/api/contact", async (req, res) => {
     };
 
     await transporter.sendMail(mailOptions);
-    res.status(200).json({ message: "Message sent successfully" });
+
+    res.status(200).json({
+      message: "Message sent successfully",
+    });
   } catch (err) {
     console.error("Email error:", err);
-    res.status(500).json({ error: "Failed to send message" });
+    console.error("Error message:", err.message);
+
+    res.status(500).json({
+      error: "Failed to send message",
+      details: err.message,
+    });
   }
 });
 
