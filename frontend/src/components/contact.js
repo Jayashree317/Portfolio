@@ -45,26 +45,45 @@ function Contact() {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-      if (!response.ok) throw new Error("Something went wrong");
+  setError(null);
 
-      setSubmitted(true);
-      setError(null);
-      setFormData({ name: "", email: "", message: "" });
-    } catch (err) {
-      setError("Failed to send message. Please try again.");
-    }
+  const data = {
+    access_key: "9d171890-82cc-46cf-9541-f28601e00f53",
+    name: formData.name,
+    email: formData.email,
+    message: formData.message,
+    subject: "New Portfolio Contact Message",
   };
+
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      setSubmitted(true);
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } else {
+      setError("Failed to send message.");
+    }
+  } catch (error) {
+    setError("Failed to send message.");
+  }
+};
 
   return (
     <>
