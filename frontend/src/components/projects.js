@@ -22,12 +22,12 @@ const projects = [
     github: "https://github.com/Jayashree317/Voice_Todo_List",
   },
   {
-    title: "E-Commerce Website",
+    title: "Employee Management System",
     description:
-      "A full-stack e-commerce platform with product listing, cart, authentication, and payment integration.",
-    image: "/images/ecommerce.png",
-    link: "https://your-ecommerce-demo.netlify.app",
-    github: "https://github.com/Jayashree317/HappyPaws",
+     "A full-stack Employee Management System developed using Java Spring Boot, MySQL, HTML, CSS and Thymeleaf.This application helps manage employees and departments with CRUD operations and responsive UI.",
+    image: "/images/employee.png",
+    // link: "https://your-ecommerce-demo.netlify.app",
+    github: "https://github.com/Jayashree317/Employee_Management_System",
   },
   {
     title: "Project Management Dashboard",
