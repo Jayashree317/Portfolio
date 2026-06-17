@@ -23,6 +23,14 @@ const projects = [
     link: "https://voice-todo-list.netlify.app/",
     github: "https://github.com/Jayashree317/Voice_Todo_List",
   },
+   {
+    title: "Real-Time Chat Application",
+    description:
+      "A responsive weather app using API integration to show real-time weather data by location.",
+    image: chat,
+    link: "https://chat-application-1-eaig.onrender.com",
+    github: "https://github.com/Jayashree317/Chat_Application",
+  },
   {
     title: "Employee Management System",
     description:
@@ -31,22 +39,15 @@ const projects = [
     // link: "https://your-ecommerce-demo.netlify.app",
     github: "https://github.com/Jayashree317/Employee_Management_System",
   },
-  {
-    title: "Project Management Dashboard",
-    description:
-      "A task management system with drag-and-drop features, CRUD operations, and user role management.",
-    image: "/images/dashboard.png",
-    link: "https://your-dashboard-demo.netlify.app",
-    github: "https://github.com/Jayashree317/PowerSoft-_Techno_Solution",
-  },
-  {
-    title: "Real-Time Chat Application",
-    description:
-      "A responsive weather app using API integration to show real-time weather data by location.",
-    image: chat,
-    link: "https://chat-application-1-eaig.onrender.com",
-    github: "https://github.com/Jayashree317/Chat_Application",
-  },
+  // {
+  //   title: "Project Management Dashboard",
+  //   description:
+  //     "A task management system with drag-and-drop features, CRUD operations, and user role management.",
+  //   image: "/images/dashboard.png",
+  //   link: "https://your-dashboard-demo.netlify.app",
+  //   github: "https://github.com/Jayashree317/PowerSoft-_Techno_Solution",
+  // },
+ 
   // {
   //   title: "Portfolio Website",
   //   description:
